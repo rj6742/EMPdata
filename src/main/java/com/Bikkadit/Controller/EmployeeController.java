@@ -90,11 +90,11 @@ public class EmployeeController {
 	}
 	
 	@GetMapping(value = "/updatemultiple",produces = "application/json",consumes = "application/json")
-	public ResponseEntity<String> updatemulti(@RequestBody List<Employee> employee)
+	public ResponseEntity<List<Employee>> updatemulti(@RequestBody List<Employee> employee)
 	{
-		impl.updateMultiple(employee);
+		List<Employee> updateMultiple = impl.updateMultiple(employee);
 		
-			return new ResponseEntity<String>("updated successfully",HttpStatus.OK);
+			return new ResponseEntity<List<Employee>>(updateMultiple,HttpStatus.OK);
 		
 	}
 	

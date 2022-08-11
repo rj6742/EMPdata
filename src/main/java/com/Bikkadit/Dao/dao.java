@@ -120,17 +120,19 @@ Session session = sf.openSession();
 	}
 
 	@Override
-	public String updateMultiple(List<Employee> employee) {
+	public List<Employee> updateMultiple(List<Employee> employee) {
 		Session session = sf.openSession();
 		session.beginTransaction();
 		for(Employee e:employee)
 		{
 			session.update(e);
 			
+			session.getTransaction().commit();
+			
 		}
 		
 		
-		return "rj";
+		return employee;
 		
 		
 	}
@@ -152,7 +154,6 @@ Session session = sf.openSession();
 		{
 			if((e.getName().equals(name))&&( e.getPwd().equals(pwd)))
 			{
-				
 				session.getTransaction().commit();
 				return (Employee)e;
 	
@@ -212,22 +213,24 @@ Session session = sf.openSession();
 		List<Employee> list = query.getResultList();
 		Predicate <Employee> predicate=list1->list1.getAge()>18;
 		
-		
-		
-		
-		
+		System.out.println("Start");
 		if (list!=null) {
 		for(Employee ll:list )
 		{
 			if(predicate.test(ll))
+				
+				
 			{
+				session.getTransaction().commit();
 				return (List<Employee>) ll;
 			}
 			
 		}
 		}
 		
-		session.getTransaction().commit();
+		System.out.println("end");
+		
+		
 		return null;
 		
 		

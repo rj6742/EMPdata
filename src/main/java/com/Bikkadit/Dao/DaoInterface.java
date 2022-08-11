@@ -16,7 +16,7 @@ public interface DaoInterface {
 	
 	public Employee update(Employee employee);
 	
-	public String updateMultiple(List<Employee> employee);
+	public List<Employee> updateMultiple(List<Employee> employee);
 	
 	public Employee login(String name,String pwd);
 	

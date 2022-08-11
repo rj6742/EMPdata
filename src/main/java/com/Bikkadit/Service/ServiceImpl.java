@@ -14,6 +14,8 @@ public class ServiceImpl implements ServiceI{
 	
 	@Autowired
 	private DaoInterface dao;
+	
+
 
 	@Override
 	public Employee addemployee(Employee employee) {
@@ -56,10 +58,12 @@ public class ServiceImpl implements ServiceI{
 	}
 
 	@Override
-	public void updateMultiple(List<Employee> employee) {
+	public List<Employee> updateMultiple(List<Employee> employee) {
 
 		
-		dao.updateMultiple(employee);
+		List<Employee> updateMultiple = dao.updateMultiple(employee);
+		
+		return updateMultiple;
 	
 	}
 
@@ -84,11 +88,11 @@ public class ServiceImpl implements ServiceI{
 
 	@Override
 	public List<Employee> agelessthan(Integer age) {
-
-		List<Employee> agelessthan = dao.agelessthan(age);
-		return agelessthan;
+		// TODO Auto-generated method stub
+		return null;
 	}
 
+	
 	
 
 }

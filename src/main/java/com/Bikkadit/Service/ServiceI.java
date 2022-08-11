@@ -16,7 +16,7 @@ public interface ServiceI {
 	
 	public Employee update(Employee employee);
 	
-	public void updateMultiple(List<Employee> employee);
+	public List<Employee> updateMultiple(List<Employee> employee);
 	
 	public Employee login(String name,String pwd);
 	
