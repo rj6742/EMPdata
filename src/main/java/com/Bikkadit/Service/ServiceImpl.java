@@ -2,6 +2,7 @@ package com.Bikkadit.Service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.Bikkadit.Dao.DaoInterface;
@@ -11,7 +12,7 @@ import com.Bikkadit.Model.Employee;
 public class ServiceImpl implements ServiceI{
 	
 	
-	
+	@Autowired
 	private DaoInterface dao;
 
 	@Override
@@ -55,12 +56,11 @@ public class ServiceImpl implements ServiceI{
 	}
 
 	@Override
-	public List<Employee> updateMultiple(List<Employee> employee) {
+	public void updateMultiple(List<Employee> employee) {
 
 		
-		List<Employee> updateMultiple = dao.updateMultiple(employee);
-		
-		return updateMultiple;
+		dao.updateMultiple(employee);
+	
 	}
 
 	@Override
@@ -83,16 +83,12 @@ public class ServiceImpl implements ServiceI{
 	}
 
 	@Override
-	public List<Employee> agelessthan(Integer id) {
+	public List<Employee> agelessthan(Integer age) {
 
-		List<Employee> agelessthan = dao.agelessthan(id);
+		List<Employee> agelessthan = dao.agelessthan(age);
 		return agelessthan;
 	}
 
-	@Override
-	public List<Employee> ageGreaterthan(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 
 }

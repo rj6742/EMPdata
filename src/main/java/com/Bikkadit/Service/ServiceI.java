@@ -16,7 +16,7 @@ public interface ServiceI {
 	
 	public Employee update(Employee employee);
 	
-	public List<Employee> updateMultiple(List<Employee> employee);
+	public void updateMultiple(List<Employee> employee);
 	
 	public Employee login(String name,String pwd);
 	
@@ -26,6 +26,5 @@ public interface ServiceI {
 	
 	public List<Employee> agelessthan(Integer age);
 	
-	public List<Employee> ageGreaterthan(Integer id);
 
 }

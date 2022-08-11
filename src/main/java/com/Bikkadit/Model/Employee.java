@@ -21,6 +21,16 @@ public class Employee {
 	private String department;
 	
 	private Integer age;
+	
+	private String pwd;
+
+	public String getPwd() {
+		return pwd;
+	}
+
+	public void setPwd(String pwd) {
+		this.pwd = pwd;
+	}
 
 	public Integer getId() {
 		return id;
@@ -73,9 +83,9 @@ public class Employee {
 	@Override
 	public String toString() {
 		return "Employee [id=" + id + ", name=" + name + ", address=" + address + ", email=" + email + ", department="
-				+ department + ", age=" + age + "]";
+				+ department + ", age=" + age + ", pwd=" + pwd + "]";
 	}
-	
+
 	
 	
 	
